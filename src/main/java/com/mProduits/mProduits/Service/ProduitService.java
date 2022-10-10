@@ -21,6 +21,7 @@ public class ProduitService {
 
     public List<Produit> recupererLesProduits()
     {
+
         return produitRepository.findAll();
     }
 

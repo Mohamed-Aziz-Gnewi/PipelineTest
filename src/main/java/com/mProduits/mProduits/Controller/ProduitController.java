@@ -30,11 +30,7 @@ public class ProduitController {
     @GetMapping("/getAll")
     public List<Produit> recupererTous()
     {
-        List<Produit> produits = produitService.recupererLesProduits();
-        if(produits.isEmpty()) throw new ProductNotFoundException("Aucun produit existe");
-
-        List<Produit> produitsLimite = produits.subList(0,applicationConfiguration.getLimitDesProduits());
-        return produitsLimite ;
+       return produitService.recupererLesProduits();
     }
 
     @GetMapping("/getProduit/{id}")
