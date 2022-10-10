@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '962f6874-a317-4ab2-a813-59a02adcb502', url: 'https://github.com/Mohamed-Aziz-Gnewi/PipelineTest.git']]])
+                echo 'Hello World'
+            }
+        }
+        stage('testing') {
+            steps {
+                echo 'test'
+                powershell 'mvn test'            }
+        }
+        stage('build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
