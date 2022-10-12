@@ -12,12 +12,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@AllArgsConstructor
 public class ProduitService {
 
 
     private final ProduitRepository produitRepository;
 
+    public ProduitService(ProduitRepository produitRepository) {
+        this.produitRepository = produitRepository;
+    }
 
     public List<Produit> recupererLesProduits()
     {
