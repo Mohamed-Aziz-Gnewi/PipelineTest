@@ -26,4 +26,8 @@ class ProduitRepositoryTest {
 
         assertThat(produitTest).isNotNull();
     }
+    @Test
+    void falseTest(){
+        assertThat(1).isEqualTo(0);
+    }
 }
